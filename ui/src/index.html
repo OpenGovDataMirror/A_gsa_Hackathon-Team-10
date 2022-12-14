@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="AppController">
+  <head>
+  	<style type="text/css">
+		
+		.vh-root-container{
+			margin: auto;
+			max-width: 900px;
+			min-width: 600px; 
+			margin-top: 20px;
+		}
+
+		.logo{
+			margin-top: 20px;
+		}
+
+		.identity-header {
+			background-color: rgba(53, 53, 53, 0.8);
+			color: #ffffff;
+			box-shadow: 0px 0px 10px 0px #353535;
+		}
+
+		.vn-basic-info > li {
+			font-weight: bold;
+		}
+
+		.vn-label-val {
+			font-weight: normal;
+		}
+
+		.btn-app-primary {
+			background-color: #ff9800;
+			/*border: 1px solid #cc7a00;*/
+			color: #ffffff;
+		}
+
+		.margin-top-sm {
+			margin-top: 10px;
+		}
+
+		.app-title > a{
+			text-decoration: none;
+			color: #fff;
+		}
+
+		.app-title > a:hover {
+			color: #ff9800;
+			cursor: pointer;
+			text-decoration: none;
+		}
+
+		div[ng-show="hasError"] {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+	</style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vendor Hub</title>
+
+    <% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+
+  </head>
+  <body ng-class="$state.current.name==='home' ? 'home':''">
+
+    <div ui-view="header"></div>
+    <div ui-view="main"></div>
+  </body>
+  <!-- compiled JavaScript -->
+  <% scripts.forEach( function ( file ) { %>
+  <script type="text/javascript" src="<%= file %>"></script><% }); %>
+
+</html>
